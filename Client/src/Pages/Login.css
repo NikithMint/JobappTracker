@@ -1,5 +1,8 @@
 /* Login.css */
-
+.title{
+  text-align: center;
+  padding-top: 5px;
+}
 .login-container {
     display: flex;
     height: 100vh;

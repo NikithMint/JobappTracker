@@ -63,6 +63,8 @@ const Signup = () => {
   };
 
   return (
+  <div>
+    <h1 className="title">Job Application Tracker</h1>  
   <div className="signup-container">
     <div className="signup-box">
       <h2>Keep your job applications organized</h2>
@@ -108,6 +110,7 @@ const Signup = () => {
       </p>
       </form>
     </div>
+  </div>
   </div>
 
   );
