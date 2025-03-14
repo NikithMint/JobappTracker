@@ -505,3 +505,4 @@ D:\Project\Server\obj\Debug\net8.0\refint\JobApplicationTrackerAPI.dll
 D:\Project\Server\obj\Debug\net8.0\JobApplicationTrackerAPI.pdb
 D:\Project\Server\obj\Debug\net8.0\JobApplicationTrackerAPI.genruntimeconfig.cache
 D:\Project\Server\obj\Debug\net8.0\ref\JobApplicationTrackerAPI.dll
+D:\Project\Server\obj\Debug\net8.0\JobApplicationTrackerAPI.sourcelink.json
