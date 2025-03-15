@@ -1,41 +1,58 @@
-import React from 'react'
-import { useState,useEffect } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./Dashboard.css";  // Import CSS file
+
 const Dashboard = () => {
+  const [jobs, setJobs] = useState([]);
 
-  const [delta,setdelta]=useState([])
-  useEffect(() =>{
-    axios.get('http://localhost:5111/api/jobs')
-    // .then((response) =>console.log(response))
-    .then((res) =>setdelta(res.data))
-    console.log("useeffect executed")
-  },[])
+  useEffect(() => {
+    axios
+      .get("http://localhost:5111/api/jobs")
+      .then((res) => setJobs(res.data))
+      .catch((err) => console.error("Error fetching jobs:", err));
+  }, []);
 
+  const handleDelete = (id) => {
+    axios
+      .delete(`http://localhost:5111/api/jobs/${id}`)
+      .then(() => {
+        // Update UI by removing the deleted job
+        setJobs((prevJobs) => prevJobs.filter((job) => job.id !== id));
+      })
+      .catch((err) => console.error("Error deleting job:", err));
+  };
 
   return (
-    <div>
-      {
-        delta && delta.map((i)=>(
-        <div>
-         
-        <h1>{i.id}</h1>
-        <h2>{i.comapny}</h2>
-        <h3>{i.position}</h3>
-        
-        
-      
-        <br></br>
-        <br></br>
-        
-          
-          
-          
-        </div> 
-      ))
-      }
-      
-    </div>
-  )
-}
+    <div className="container">
+      <h2>Job Applications</h2>
 
-export default Dashboard
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Company</th>
+            <th>Position</th>
+            <th>Status</th>
+            <th>Applied Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {jobs.map((job) => (
+            <tr key={job.id}>
+              <td>{job.id}</td>
+              <td>{job.company}</td>
+              <td>{job.position}</td>
+              <td>{job.status}</td>
+              <td>{new Date(job.appliedDate).toLocaleDateString()}</td>
+              <td>
+                <button onClick={() => handleDelete(job.id)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default Dashboard;
