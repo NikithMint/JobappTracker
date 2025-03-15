@@ -1,0 +1,28 @@
+nav{
+    
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    
+}
+nav img{
+    
+    height: 100px;
+    
+}
+nav button{
+    
+    justify-content:right;
+    background: transparent;
+    font-size: 14px;
+    color:#49557e ;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: auto; /*pushes button to rigthend*/
+    
+}

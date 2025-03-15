@@ -34,17 +34,18 @@ const Login = () => {
 
     if (user.email === email && user.password === password) {
       setFormError("");
-      navigate("/dashboard"); 
+      navigate("/Home"); 
     } else {
       setFormError("Invalid email or password.");
     }
   };
 
   return (
-  <div>
+  <div className="login-complete">
     
     <h1 className="title">Job Application Tracker</h1>
     <div className="login-container">
+      
     
     <div className="login-box">
       <h2>Welcome back!</h2>

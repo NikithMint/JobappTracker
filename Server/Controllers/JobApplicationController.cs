@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+// using YourNamespace.Models;
 
 
 [ApiController]
@@ -37,13 +38,23 @@ public class JobApplicationController : ControllerBase
     }
 
     // ✅ Add a new job
+    // [HttpPost]
+    // public async Task<ActionResult<JobApplication>> AddJob(JobApplication job)
+    // {
+    //     _context.JobApplications.Add(job);
+    //     await _context.SaveChangesAsync();
+    //     return CreatedAtAction(nameof(GetJob), new { id = job.Id }, job);
+    // }
     [HttpPost]
-    public async Task<ActionResult<JobApplication>> AddJob(JobApplication job)
+    public async Task<ActionResult<JobApplication>> AddJob([FromBody] JobApplication job)
     {
-        _context.JobApplications.Add(job);
-        await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetJob), new { id = job.Id }, job);
+    _context.JobApplications.Add(job);
+    await _context.SaveChangesAsync();
+    return CreatedAtAction(nameof(GetJob), new { id = job.Id }, job);
     }
+
+  
+
 
     // ✅ Update job status
     [HttpPut("{id}")]
@@ -71,8 +82,4 @@ public class JobApplicationController : ControllerBase
         await _context.SaveChangesAsync();
         return NoContent();
     }
-    
-
-    
-    
 }
