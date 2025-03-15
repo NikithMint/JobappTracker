@@ -6,7 +6,7 @@ const Dashboard = () => {
   const [jobs, setJobs] = useState([]);
   const [editingJob, setEditingJob] = useState(null);
   const [updatedJob, setUpdatedJob] = useState({});
-  const [newJobData, setNewJobData] = useState({ company: "", position: "", status: "Pending" });
+  
 
 
   // Fetch jobs from API
@@ -53,29 +53,6 @@ const Dashboard = () => {
 
 
 
-
-  // const handleCreateJob = () => {
-  //   const newJob = {
-  //     company: newJobData.company,
-  //     position: newJobData.position,
-  //     status: newJobData.status || "Pending",
-  //   };
-  
-  //   console.log("Sending data to API:", newJob); // Debugging step
-  
-  //   axios
-  //     .post("http://localhost:5111/api/jobs", newJob, {
-  //       headers: { "Content-Type": "application/json" },
-  //     })
-  //     .then((res) => {
-  //       console.log("Response from API:", res.data);
-  //       setJobs([...jobs, res.data]);
-  //       setNewJobData({ company: "", position: "", status: "Pending" });
-  //     })
-  //     .catch((err) => {
-  //       console.error("Error adding job:", err.response?.data || err.message);
-  //     });
-  // };
 
   return (
     <div className="container">
@@ -138,24 +115,7 @@ const Dashboard = () => {
           ))}
         </tbody>
       </table>
-      {/* Add Job Form */}
-      {/* <br></br>
-      <br></br>
-      <div className="add-job-form">
-        <input
-          type="text"
-          placeholder="Company"
-          value={newJobData.company}
-          onChange={(e) => setNewJobData({ ...newJobData, company: e.target.value })}
-        />
-        <input
-          type="text"
-          placeholder="Position"
-          value={newJobData.position}
-          onChange={(e) => setNewJobData({ ...newJobData, position: e.target.value })}
-        />
-        <button onClick={handleCreateJob} className="add-btn">Add Job</button>
-      </div> */}
+     
     </div>
   );
 };
