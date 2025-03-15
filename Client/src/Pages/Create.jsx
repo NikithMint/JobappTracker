@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
-
+import "./Create.css"
 const Create = () => {
     const [newJobData, setNewJobData] = useState({ company: "", position: "", status: "Pending" });
     const handleCreateJob = () => {
@@ -31,6 +31,10 @@ const Create = () => {
     <div>
         {/* Add Job Form */}
       <Navbar/>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div className='add-job-container'>
       <div className="add-job-form">
         <input
           type="text"
@@ -45,6 +49,7 @@ const Create = () => {
           onChange={(e) => setNewJobData({ ...newJobData, position: e.target.value })}
         />
         <button onClick={handleCreateJob} className="add-btn">Add Job</button>
+        </div>
       </div>
     
 
