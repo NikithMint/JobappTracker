@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
   return (
-    <div className="bg-[#ffffff]">
+    <div>
       
-      <div className="px-6 pb-6 flex-grow lg:ml-56 h-auto pt-16 lg:pt-4 bg">
+      <div>
         <Outlet />
       </div>
     </div>

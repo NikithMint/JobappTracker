@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Dashboard.css";  // Import CSS file
+import Navbar from "../Components/Navbar";
 
 const Dashboard = () => {
   const [jobs, setJobs] = useState([]);
@@ -23,7 +24,9 @@ const Dashboard = () => {
   };
 
   return (
+    
     <div className="container">
+      <Navbar/>
       <h2>Job Applications</h2>
 
       <table>
