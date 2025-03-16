@@ -19,6 +19,7 @@ const Signup = () => {
 
   const validatePassword = (password) => {
     const isValidLength = password.length > 5;
+    console.log(isValidLength);
     const hasNumber = /\d/.test(password);
     const hasAlphabet = /[a-zA-Z]/.test(password);
 

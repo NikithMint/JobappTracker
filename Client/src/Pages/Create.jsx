@@ -12,7 +12,7 @@ const Create = () => {
           status: newJobData.status || "Pending",
         };
       
-        console.log("Sending data to API:", newJob); // Debugging step
+        // alert("Sending data to API:", newJob); // Debugging step
       
         axios
           .post("http://localhost:5111/api/jobs", newJob, {
@@ -21,7 +21,7 @@ const Create = () => {
           .then((res) => {
             console.log("Response from API:", res.data);
             // setJobs([...jobs, res.data]);
-            setNewJobData({ company: "", position: "", status: "Pending" });
+            setNewJobData({ company: "", position: "", status: "Pending" }); // reset
           })
           .catch((err) => {
             console.error("Error adding job:", err.response?.data || err.message);

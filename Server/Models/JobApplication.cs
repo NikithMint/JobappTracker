@@ -8,3 +8,13 @@ public class JobApplication
     public string Status { get; set; }
     public DateTime AppliedDate { get; set; } = DateTime.Now;
 }
+
+
+
+
+
+
+
+
+
+

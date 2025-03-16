@@ -17,6 +17,8 @@ const Login = () => {
 
     if (!email || !password) {
       setFormError("All fields are required.");
+      console.log("hi");
+      alert("all fields are required");
       return;
     }
 
@@ -33,7 +35,9 @@ const Login = () => {
     }
 
     if (user.email === email && user.password === password) {
-      setFormError("");
+      
+      
+      setFormError("correct");
       navigate("/Home"); 
     } else {
       setFormError("Invalid email or password.");
@@ -76,10 +80,17 @@ const Login = () => {
         <button type="submit">Sign in</button>
         <p>
         Don&apos;t have an account? <Link to="/signup">Create one</Link>
+        
         </p>
     </form>
+    
   </div>
+  
+  
+  
+  
 </div>
+
 </div>
   );
 };

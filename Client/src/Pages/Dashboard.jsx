@@ -3,12 +3,10 @@ import axios from "axios";
 import "./Dashboard.css";
 
 const Dashboard = () => {
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState([]); // api data gets appended
   const [editingJob, setEditingJob] = useState(null);
   const [updatedJob, setUpdatedJob] = useState({});
   
-
-
   // Fetch jobs from API
   useEffect(() => {
     axios
@@ -26,6 +24,7 @@ const Dashboard = () => {
       })
       .catch((err) => console.error("Error deleting job:", err));
   };
+  
 
   // Handle Edit
   const handleEdit = (job) => {
@@ -50,15 +49,29 @@ const Dashboard = () => {
       })
       .catch((err) => console.error("Error updating job:", err));
   };
+  
 
-
+  const interviewScheduledJobs = jobs.filter(job => job.status === "Interview Scheduled");
 
 
   return (
     <div className="container">
       <h2>Job Applications</h2>
+      {/* Notifications Section */}
+      {interviewScheduledJobs.length > 0 && (
+        <div className="notification">
+          <h3>Upcoming Interviews</h3>
+          <ul>
+            {interviewScheduledJobs.map((job) => (
+              <li key={job.id}>
+                {job.company} - {job.position} on {new Date(job.appliedDate).toLocaleDateString()}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
        
-
+    
      
 
       {/* Jobs Table */}
@@ -82,6 +95,7 @@ const Dashboard = () => {
                   <td>{index + 1}</td>
                   <td>{job.company}</td>
                   <td>{job.position}</td>
+
                   <td>
                     <select name="status" value={updatedJob.status} onChange={handleChange}>
                       <option value="Pending">Pending</option>

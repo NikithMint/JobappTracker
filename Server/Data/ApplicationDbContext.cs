@@ -15,11 +15,6 @@ public class ApplicationDbContext : DbContext
     {
         optionsBuilder.UseSqlServer("Server=NIKITHMINT\\SQLEXPRESS;Database=JobTrackerDB;Trusted_Connection=True;Encrypt=False");
     }
-
-
-
-    
-    
 }
 
 
