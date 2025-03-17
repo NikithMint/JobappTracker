@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 // using YourNamespace.Models;
 
-
 [ApiController]
 [Route("api/jobs")]
 public class JobApplicationController : ControllerBase
@@ -17,7 +16,6 @@ public class JobApplicationController : ControllerBase
         _context = context;
     }
     
-
     // ✅ Get all job applications
     [HttpGet]
     public async Task<ActionResult<IEnumerable<JobApplication>>> GetJobs()
@@ -38,13 +36,6 @@ public class JobApplicationController : ControllerBase
     }
 
     // ✅ Add a new job
-    // [HttpPost]
-    // public async Task<ActionResult<JobApplication>> AddJob(JobApplication job)
-    // {
-    //     _context.JobApplications.Add(job);
-    //     await _context.SaveChangesAsync();
-    //     return CreatedAtAction(nameof(GetJob), new { id = job.Id }, job);
-    // }
     [HttpPost]
     public async Task<ActionResult<JobApplication>> AddJob([FromBody] JobApplication job)
     {
@@ -52,9 +43,6 @@ public class JobApplicationController : ControllerBase
     await _context.SaveChangesAsync();
     return CreatedAtAction(nameof(GetJob), new { id = job.Id }, job);
     }
-
-  
-
 
     // ✅ Update job status
     [HttpPut("{id}")]
