@@ -16,14 +16,14 @@ public class JobApplicationController : ControllerBase
         _context = context;
     }
     
-    // ✅ Get all job applications
+    // Get all job applications
     [HttpGet]
     public async Task<ActionResult<IEnumerable<JobApplication>>> GetJobs()
     {
         return await _context.JobApplications.ToListAsync();
     }
 
-    // ✅ Get a single job by ID
+    // Get a single job by ID
     [HttpGet("{id}")]
     public async Task<ActionResult<JobApplication>> GetJob(int id)
     {
@@ -35,7 +35,7 @@ public class JobApplicationController : ControllerBase
         return job;
     }
 
-    // ✅ Add a new job
+    // Add a new job
     [HttpPost]
     public async Task<ActionResult<JobApplication>> AddJob([FromBody] JobApplication job)
     {
@@ -44,7 +44,7 @@ public class JobApplicationController : ControllerBase
     return CreatedAtAction(nameof(GetJob), new { id = job.Id }, job);
     }
 
-    // ✅ Update job status
+    // Update job status
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateJob(int id, JobApplication job)
     {
@@ -57,7 +57,7 @@ public class JobApplicationController : ControllerBase
         return NoContent();
     }
 
-    // ✅ Delete job application
+    // Delete job application
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteJob(int id)
     {
