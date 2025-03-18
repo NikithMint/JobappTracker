@@ -12,7 +12,7 @@ const Create = () => {
           status: newJobData.status || "Pending",
         };
       
-        // alert("Sending data to API:", newJob); // Debugging step
+        alert("Job Added Successfully", newJob); // Debugging step
       
         axios
           .post("http://localhost:5111/api/jobs", newJob, {

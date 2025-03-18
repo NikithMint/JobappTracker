@@ -58,6 +58,7 @@ const Dashboard = () => {
     <div className="container">
       <h2>Job Applications</h2>
       {/* Notifications Section */}
+      
       {interviewScheduledJobs.length > 0 && (
         <div className="notification">
           <h3>Upcoming Interviews</h3>

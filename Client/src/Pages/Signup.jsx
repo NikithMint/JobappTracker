@@ -64,7 +64,7 @@ const Signup = () => {
   };
 
   return (
-  <div>
+  <div className="signup-total">
     <h1 className="title">Job Application Tracker</h1>  
   <div className="signup-container">
     <div className="signup-box">
