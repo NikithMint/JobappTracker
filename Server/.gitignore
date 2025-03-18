@@ -1,0 +1,47 @@
+# Build Folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs, Database, and Debugging
+*.log
+*.tlog
+*.pdb
+*.mdb
+*.opendb
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# NuGet
+*.nupkg
+.nuget/
+
+# Entity Framework Migrations
+Migrations/
+
+# Configuration Files
+appsettings*.json
+
+# ASP.NET temporary files
+.aspnet/
+
+# Publish Outputs
+publish/
+wwwroot/
+
+# Resharper & Rider
+*.DotSettings.user
+
+# JetBrains Rider
+.idea/
+*.sln.iml
