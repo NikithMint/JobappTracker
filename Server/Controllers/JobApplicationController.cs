@@ -23,7 +23,7 @@ public class JobApplicationController : ControllerBase
         return await _context.JobApplications.ToListAsync();
     }
 
-    // Get a single job by ID
+    // Get a single job by
     [HttpGet("{id}")]
     public async Task<ActionResult<JobApplication>> GetJob(int id)
     {
