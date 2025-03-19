@@ -6,8 +6,8 @@ const Navbar = () => {
     <div>
       <nav>
         <img src="https://cdn-icons-png.flaticon.com/512/6427/6427283.png"></img>
-        <Link to="/Dashboard"><h1>Applications</h1></Link>
         <Link to="/Home"><h1>Home</h1></Link>
+        <Link to="/Dashboard"><h1>Applications</h1></Link>
         <Link to="/Profile"><h1>Profile</h1></Link>
         <Link to="/Create"><h1>Create</h1></Link>
         
