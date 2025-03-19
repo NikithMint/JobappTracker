@@ -14,3 +14,4 @@ VALUES
 ('Amazon', 'Backend Developer', 'Rejected');
 SELECT * FROM JobApplications;
 SELECT name FROM sys.databases;
+DBCC CHECKIDENT ('JobApplications', RESEED, 0);
