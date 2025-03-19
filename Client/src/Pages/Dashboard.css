@@ -262,3 +262,37 @@ tr:nth-child(even) {
   border-bottom: none;
 }
 
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  appearance: none; /* Removes default arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="gray"><path d="M7 10l5 5 5-5z"></path></svg>'); 
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+}
+
+select:hover {
+  border-color: #357ABD;
+}
+
+select:focus {
+  outline: none;
+  border-color: #1e5aa8;
+  box-shadow: 0 0 5px rgba(30, 90, 168, 0.5);
+}
+
+option {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+}
+

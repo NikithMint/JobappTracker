@@ -6,13 +6,14 @@ const Footer = () => {
     <div className='footer' id='footer'>
         <div className="footer-content">
             <div className="footer-content-left">
-                {/* <img src={assets.logo} alt=""/> */}
-                <p>Nikith Mint</p>
-                {/* <div className="footer-social-icons">
-                    <img src={assets.facebook_icon} alt=""/>
-                    <img src={assets.twitter_icon} alt=""/>
-                    <img src={assets.linkedin_icon} alt=""/>
-                </div> */}
+                
+                <h1>About Us</h1>
+                <p>
+                The Job Tracker Application is designed to help users organize, track, and manage their job applications efficiently. Whether you’re 
+                applying to multiple positions, scheduling interviews, or following up with recruiters, this application provides a structured way to stay on top of your job search.
+                </p>
+                
+                
 
             </div>
             <div className="footer-content-center">
@@ -20,7 +21,7 @@ const Footer = () => {
                 <ul>
                     <li>Home</li>
                     <li>About us</li>
-                    <li>Delivery</li>
+                    <li></li>
                     <li>Privacy policy</li>
                 </ul>
 
@@ -35,7 +36,7 @@ const Footer = () => {
             </div>
         </div>
         
-        <p> Copyright 2024 Ⓒ Tomato.com - All Right Reserved</p>
+        <p> Copyright 2024 Ⓒ jobtracker.com - All Right Reserved</p>
 
       
     </div>
