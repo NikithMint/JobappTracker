@@ -6,6 +6,7 @@ const Dashboard = () => {
   const [jobs, setJobs] = useState([]); // api data gets appended
   const [editingJob, setEditingJob] = useState(null);
   const [updatedJob, setUpdatedJob] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
   
   // Fetch jobs from API
   useEffect(() => {
@@ -59,7 +60,7 @@ const Dashboard = () => {
       <h2>Job Applications</h2>
       {/* Notifications Section */}
       
-      {interviewScheduledJobs.length > 0 && (
+      {/* {interviewScheduledJobs.length > 0 && (
         <div className="notification">
           <h3>Upcoming Interviews</h3>
           <ul>
@@ -70,7 +71,33 @@ const Dashboard = () => {
             ))}
           </ul>
         </div>
+      )} */}
+       {interviewScheduledJobs.length > 0 && (
+        <div className="accordion">
+          <button className="accordion-header" onClick={() => setIsOpen(!isOpen)}>
+            <h3>Upcoming Interviews</h3>
+            <span className={isOpen ? "arrow up" : "arrow down"}>▼</span>
+          </button>
+          {isOpen && (
+            <div className="accordion-content">
+              <ul>
+                {interviewScheduledJobs.map((job) => (
+                  <li key={job.id}>
+                    <strong>{job.company}</strong> - {job.position} <br />
+                    📅 {new Date(job.appliedDate).toLocaleDateString()}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       )}
+      
+
+
+
+      <br></br>
+      <br></br>
        
     
      

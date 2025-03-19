@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, Legend } from "recharts";
 import axios from "axios";
 import Navbar from "../Components/Navbar";
+import "./Home.css"
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [jobData, setJobData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get("http://localhost:5111/api/jobs") // Replace with your API URL
@@ -36,9 +39,20 @@ const Home = () => {
 
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
+  function navi(){
+    navigate("/Dashboard");
+
+  }
+
   return (
     <div>
         <Navbar/>
+
+        <div class="hero">
+        <h1>Welcome to Job Tracker Application</h1>
+        <h2>Track your job applications easily!</h2>
+        <button class="cta-btn" onClick={navi}>Get Started</button>
+        </div>
         <br></br>
         <br></br>
     <div style={{ display: "flex", justifyContent: "center", gap: "50px", flexWrap: "wrap" }}>
