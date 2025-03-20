@@ -7,4 +7,5 @@ donet run
 
 For Running the Front-end
 cd Client
+npm i
 npm run dev
