@@ -5210,11 +5210,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\Server\\JobApplicationTrackerAPI.csproj",
+      "projectUniqueName": "D:\\JobappTracker\\Server\\JobApplicationTrackerAPI.csproj",
       "projectName": "JobApplicationTrackerAPI",
-      "projectPath": "D:\\Project\\Server\\JobApplicationTrackerAPI.csproj",
+      "projectPath": "D:\\JobappTracker\\Server\\JobApplicationTrackerAPI.csproj",
       "packagesPath": "C:\\Users\\nikit\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\Server\\obj\\",
+      "outputPath": "D:\\JobappTracker\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nikit\\AppData\\Roaming\\NuGet\\NuGet.Config"
