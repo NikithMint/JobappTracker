@@ -29,6 +29,7 @@ obj/
 # Entity Framework Migrations
 Migrations/
 
+
 # Configuration Files
 appsettings*.json
 
